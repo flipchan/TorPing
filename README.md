@@ -10,10 +10,9 @@ This is a simple to use script that checks The Hidden service directory with the
 
 
 ## how to:
-'''
-testing with duckduckgo(http://3g2upl4pq6kufc4m.onion)
+Testing with duckduckgo(http://3g2upl4pq6kufc4m.onion)
 and an invalid one
-
+```console
 root@sb0x# python ping_it.py http://3g2upl4pq6kufc4m.onion advanced
 checking http://3g2upl4pq6kufc4m.onion
 checked:
@@ -45,4 +44,5 @@ checking http://3g2upl4pq6kufc43.onion
 No running hidden service at 3g2upl4pq6kufc43.onion
 the hidden service is down
 
-'''
+```
+
