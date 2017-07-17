@@ -50,10 +50,10 @@ try:
 			print 'invalid .onion'
 		else:		
 			print 'checking ' + argv[1]#hstocheck
-      b = Controller.from_port(port = 9051)
+                        b = Controller.from_port(port = 9051)
 			b.authenticate()
 # descriptor of duck-duck-go's hidden service (http://3g2upl4pq6kufc4m.onion)
-      c = b.get_hidden_service_descriptor(hstocheck).__dict__
+      	                c = b.get_hidden_service_descriptor(hstocheck).__dict__
 			print 'checked:'
 			print hstocheck
 			print 'the hiddenservice is up'	
