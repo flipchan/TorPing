@@ -7,7 +7,7 @@ this does not send a icmp requests it checks if the .onion is in the DHT for hid
 This is a simple to use script that checks The Hidden service directory with the help of stem(https://stem.torproject.org/)
 
 
-
+pip2 install stem
 
 ## how to:
 Testing with duckduckgo(http://3g2upl4pq6kufc4m.onion)
