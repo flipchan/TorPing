@@ -40,7 +40,7 @@ def display_info(c):
 	print 'rendezvous service descriptor: ' + str(c['_entries']['rendezvous-service-descriptor'][0])
 	print 'Version: ' + str(c['_entries']['version'][0][0])
 	
-
+b = Controller.from_port(port = 9050)# change if needed
 try:
 	if len(argv) < 3:
 			help_msg()
@@ -50,7 +50,7 @@ try:
 			print 'invalid .onion'
 		else:		
 			print 'checking ' + argv[1]#hstocheck
-                        b = Controller.from_port(port = 9051)
+                        
 			b.authenticate()
 # descriptor of duck-duck-go's hidden service (http://3g2upl4pq6kufc4m.onion)
       	                c = b.get_hidden_service_descriptor(hstocheck).__dict__
@@ -61,7 +61,7 @@ try:
 				display_info(c)
 			else:#verify the simple string input ... yes yes ..
 				pass
-			b.close()
+			#b.close()
 except Exception:
 	hstocheck = str(argv[1]).replace('https://', '').replace('http://', '')
 	a = 'No running hidden service at ' + hstocheck
@@ -71,14 +71,7 @@ except Exception:
 		print 'the hidden service is down'
 	else:
 		print sys.exc_info()	
+
+finally:#always close the connection
 	b.close()
-#stem returns a exception if it doesnt find it
-			#>>> b.get_hidden_service_descriptor('3g2upl4pq6kufc45.onion').__dict__
-			#Traceback (most recent call last):
-				#File "<stdin>", line 1, in <module>
-				#File "/usr/local/lib/python2.7/dist-packages/stem/control.py", line 414, in wrapped
-					#raise exc
-			#stem.DescriptorUnavailable: No running hidden service at 3g2upl4pq6kufc45.onion
-				
-			#except Exception:
-				#print 'the hiddenservice is down'
+
